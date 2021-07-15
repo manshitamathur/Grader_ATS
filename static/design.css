@@ -1,0 +1,238 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: poppins;
+	font-size: 16px;
+	color: #fff;
+}
+.form-box {
+	background-color: white(97, 15, 248, 0.89);
+	margin: auto auto;
+	border: black;
+	padding: 40px;
+	
+	
+	position: absolute;
+	top: 1000px;
+	bottom: 0;
+	left: 0;
+	right: 500;
+	width: 500px;
+	height: 430px;
+	
+	
+  	left: -10px;
+}
+.form-box:before {
+
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	content: "";
+	float:left;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	display: block;
+	filter: blur(2px);
+}
+.form-box .header-text {
+	font-size: 32px;
+	font-weight: 600;
+	padding-bottom: 30px;
+	text-align: center;
+	color: rgb(20, 60, 240);
+}
+.form-box input {
+	margin: 10px 0px;
+	border: none;
+	padding: 10px;
+	
+	width: 100%;
+	font-size: 18px;
+	font-family: poppins;
+	/* border: 1px solid rgb(84, 13, 216); */
+}
+.form-box input[type=checkbox] {
+	display: none;
+}
+.form-box option{
+	padding: 10px;
+	width:100%;
+	height: 20px;
+}
+.form-box label {
+	position: relative;
+	padding: 10px;
+	margin-left: 5px;
+	margin-right: 10px;
+	top: 5px;
+	display: inline-block;
+	width: 100%;
+	height: 20px;
+	cursor: pointer;
+}
+.form-box label:before {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	background-color: #ddd;
+}
+.form-box input[type=checkbox]:checked+label:before {
+	content: "\2713";
+	font-size: 20px;
+	color: #000;
+	text-align: center;
+	line-height: 20px;
+}
+.form-box span {
+	font-size: 14px;
+}
+.form-box button {
+	background-color: rgb(109, 26, 243) (76, 0, 255);
+	
+	color: rgb(253, 253, 253);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+	padding: 10px;
+	margin: 20px 0px;
+}
+span a {
+	color: #BBB;
+}
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.section{
+  padding-top: 0%;
+  height: 100vh;
+  
+  background-position: center;
+  background-attachment: fixed;
+}
+.wrapper{
+  padding: 20px 50px;
+}
+.wrapper .title{
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.wrapper p{
+  text-align: justify;
+  padding-bottom: 20px;
+}
+
+.counter-up::before{
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: white(0,0,0,0.8);
+}
+.counter-up .content{
+  z-index: 1;
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.counter-up .content .box{
+  border: 1px dashed rgba(255, 255, 255, 0.568);
+  width: calc(15% - 30px);
+  border-radius: 5px;
+  display: flex;
+  align-items: unset;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 2%;
+}
+.content .box .icon{
+  font-size: 48px;
+  color: #e6e6e6;
+}
+.content .box .counter{
+  font-size: 50px;
+  font-weight: 500;
+  color: #4a3ef1;
+  font-family: sans-serif;
+}
+.content .box .text{
+  font-weight: 400;
+  color: rgba(107, 105, 105, 0.589);
+}
+@media screen and (max-width: 1036px) {
+  .counter-up{
+    padding: 50px 50px 0 50px;
+  }
+  .counter-up .content .box{
+    width: calc(50% - 30px);
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .counter-up .content .box{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .wrapper{
+    padding: 20px;
+  }
+  .counter-up{
+    padding: 30px 20px 0 20px;
+  }
+}
+
+
+.box {
+    width:100px;
+    display:box;
+    
+     
+    display:-webkit-box;
+    -webkit-box-orient:horizontal;
+    
+}
+
+.box .column1 {
+    
+    -webkit-box-flex:1.0; /* Safari and Chrome */
+    -ms-flex:1.0; /* Internet Explorer 10 */
+    box-flex:1.0;
+    background: yellow;
+}
+
+.box .column2 {
+    -moz-box-flex:1.0; /* Firefox */
+    -webkit-box-flex:1.0; /* Safari and Chrome */
+    
+    box-flex:1.0;
+    background: green;
+}

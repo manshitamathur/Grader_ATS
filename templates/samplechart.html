@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            display: grid;
+            height: 100vh;
+            grid-template-rows: auto 1fr auto;
+          }
+          
+          // etc
+          
+          header {
+            background: rgb(233, 225, 226);
+            padding: 5rem;
+          }
+          
+          main {
+            background: rgba(245, 244, 248, 0.842);
+            
+          }
+          
+          footer {
+            background: rgb(101, 86, 240);
+            padding: 4rem;
+            text-align: center;
+            
+          }
+          .typewriter h1 {
+            color: #fff;
+            font-family: monospace;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid orange; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .15em; /* Adjust as needed */
+            animation: 
+              typing 3.5s steps(30, end),
+              blink-caret .5s step-end infinite;
+          }
+          
+          /* The typing effect */
+          @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+          }
+          
+          /* The typewriter cursor effect */
+          @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange }
+          }
+          
+          body {
+            font-family: system-ui, sans-serif;
+          }
+
+          .btn {
+            background-color: DodgerBlue;
+            border: none;
+            color: rgb(97, 82, 230);
+            padding: 12px 16px;
+            font-size: 16px;
+            cursor: pointer;
+          }
+          
+          /* Darker background on mouse-over */
+          .btn:hover {
+            background-color: RoyalBlue;
+          }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <header class="blue section" style="padding: 2rem;;" >
+            <a class="fusion-logo-link" style="position: absolute;top:0px;left=10%;right=500px;top:5px; height:10rem;" href="https://thementor.live/">
+                <img src="https://thementor.live/wp-content/uploads/2021/03/The-Mentor.png" srcset="https://thementor.live/wp-content/uploads/2021/03/The-Mentor.png 1x, https://thementor.live/wp-content/uploads/2021/03/The-Mentor-Live-Retina-Logo.png 2x" width="222" height="83" style="max-height:83px;height:auto;" alt="The Mentor Logo" data-retina_logo_url="https://thementor.live/wp-content/uploads/2021/03/The-Mentor-Live-Retina-Logo.png" class="fusion-sticky-logo">
+          </a>
+          <!-- <button class="btn"  style="margin:0;">HOME</button> -->
+          <a  href="{% url 'ATS'%}" class="ui-btn-right"><i class="fa fa-home fa-3x" style="float: right;width:1rem;" ></i> Home</a> 
+        </header>   
+        
+        
+    
+    {%block content%}
+     {%if chart%}
+     
+        <main class="coral section" >
+            <center>
+      <img src="data:image/png;base64 , {{chart|safe}} " style=" border: .5rem solid rgb(101, 86, 240); padding:1rem" alt="centered image">
+    </center>
+    </main>
+     {%endif%}
+     <footer class="purple section" >
+        <div class="typewriter">
+            <h1>Your resume matches about {{Result}}% to the job description.</h1>
+          </div>
+          
+      
+     
+    {%endblock%}
+</div>
+</footer>
+
+</body>
+</html>

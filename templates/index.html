@@ -1,0 +1,113 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Search Results </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+	</head>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+			line-height: 0.2em;
+		}
+
+		*{padding:0;margin:0;}
+
+body{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:18px;
+	background-color:#CCC;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:rgb(92, 38, 218);
+	color:#FFF;
+	border-radius:50px;
+	border-color: lavender;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	
+}
+
+
+.my-float{
+	margin-top:22px;
+}
+	</style>
+	<body >
+	<section class="ftco-section"style="position: auto;top=0;padding: 0em;">
+		
+			<div class="row" style="padding-top: -90%;">
+				
+						<table class="table" >
+					    <thead class="thead-primary">
+					      <tr>
+							
+					        <th>Title</th>
+					        
+					        <th>Company</th>
+							<th>Location</th>
+					        <th>Link</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+							{% for i in allinfo %}
+							
+							<tr>
+								
+								<td><b>{{i.title}}</b></td>
+								<td>{{i.company}}</td>
+								<td>{{i.location}}</td>
+								<td><a href={{i.link}} target="_blank" class="btn btn-primary">Apply Here</a></td>
+							  </tr>
+							{% endfor %}
+							<tr>
+							<!-- <td colspan="3" style="font-size: large;text-align: right;font-family: Arial, Helvetica, sans-serif;"><u>You can download the Results by clicking here-></u></td>	
+							 <form action="{%url 'download'  %}" method="POST"> -->
+								{%csrf_token%} 
+								<!-- <td ><button type="submit" class="btn btn-primary"  id="download" name="download"  >Download Results</button></td> -->
+								<!-- <a style="padding:10px;display:block;" href="http://androidcss.com/css/css3-floating-button-tutorial/" target="_blank">Click here for complete tutorial</a> -->
+
+								<!-- Code begins here -->
+								
+								<a href="{%url 'download'  %}" class="float">
+								<i class="fa fa-download my-float"></i>
+								</a>
+							</form> 
+
+							
+							
+							
+						</tr>
+					    </tbody>
+					  </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static ' js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/popper.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+
+
+	</body>
+</html>
+

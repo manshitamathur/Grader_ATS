@@ -1,0 +1,195 @@
+{% load static %}
+<html><head>
+   <!-- background-image:url("{% static 'code.jpeg' %}");-->
+    <style>
+     
+    body {
+      background-color: white;
+    
+      /* Center and scale the image nicely */
+    
+      overflow-y: hidden;
+      select>option{ 
+        height:20px;
+          }select>option{ 
+        height:20px;
+      }
+    }
+
+
+    #loader {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      width: 120px;
+      height: 120px;
+      margin: -76px 0 0 -76px;
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #5834db;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+    
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Add animation to "page content" */
+    .animate-bottom {
+      position: relative;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 2s;
+      animation-name: animatebottom;
+      animation-duration: 0.5s
+    }
+    
+    @-webkit-keyframes animatebottom {
+      from { bottom:-100px; opacity:0 } 
+      to { bottom:0px; opacity:1 }
+    }
+    
+    @keyframes animatebottom { 
+      from{ bottom:-100px; opacity:0 } 
+      to{ bottom:0; opacity:1 }
+    }
+    
+  
+  
+    </style>
+    <link rel="stylesheet" href="{% static 'design.css'%}">
+    <script src="{% static 'demo.js'%}"></script>
+
+
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+    </head>
+    <body style="background-color: white;">
+    
+    
+     
+    
+    
+     
+
+    <a class="fusion-logo-link" style="position: absolute;top:0px;left=10%;right=500px;top:5px; height:10rem;" href="https://thementor.live/">
+      <img src="https://thementor.live/wp-content/uploads/2021/03/The-Mentor.png" srcset="https://thementor.live/wp-content/uploads/2021/03/The-Mentor.png 1x, https://thementor.live/wp-content/uploads/2021/03/The-Mentor-Live-Retina-Logo.png 2x" width="222" height="83" style="max-height:83px;height:auto;" alt="The Mentor Logo" data-retina_logo_url="https://thementor.live/wp-content/uploads/2021/03/The-Mentor-Live-Retina-Logo.png" class="fusion-sticky-logo">
+</a>
+
+  
+<div class="box">
+  <div class="column1">
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{% static 'images/pic.jpeg'%}" alt="Card image cap">
+      <div class="card-body" >
+      <div style="padding:30%;position:absolute;left:-10%;right:20%;margin-left: 9%;">
+        
+      </div>
+    </div>
+<div>
+    <div class="counter-up" style="width: 40rem;position:absolute;left:10%" >
+      <div class="content">
+        <div class="box">
+          
+          <div class="counter" >2700</div>
+          <div class="text">Resumes Delivered</div>
+        </div>
+        <div class="box">
+          
+          <div class="counter">550</div>
+          <div class="text">Linked in Profiles</div>
+        </div>
+        <div class="box">
+          
+          <div class="counter">8000</div>
+          <div class="text">Job Links Distributed</div>
+        </div>
+        
+      
+    </div>
+ 
+
+      </div>
+    </div>
+    
+    
+
+    <script>
+      $(document).ready(function(){
+        $('.counter').counterUp({
+          delay: 10,
+          time: 1200
+        });
+      });
+
+
+      </script>
+     
+    </div>
+    </div>
+      <div class="column2">
+  
+         <form action="{% url 'home'%}" method="POST" class="form-box" style="position :absolute;right: -60%; top:120px;border: 10px solid rgba(233, 226, 226, 0.671);background: #fff;background-clip:border-box " enctype="multipart/form-data">
+          
+          <div class="header-text" style="color:rgb(89, 0, 255);">
+            UPLOAD DOCUMENT
+          </div>
+          
+        
+        <input type="file" name="myfile" style="color: black;">
+    
+        <!-- <label for="Domain">Choose Domain</label> -->
+            <select   name="Domain"  style="width:100%;padding:12px;color :black;border-color: rgba(103, 31, 235, 0.808);;" >
+              <option value="0">Data Science</option>
+              <option value="1">Web Development</option>
+              <option value="2">Testing</option>
+              <option value="3">Human Resource(HR)</option>
+              <option value="4">UI & UX</option>
+              <option value="5">Data Analyst</option>
+              <option value="6">Sales and Marketing</option>
+              <option value="7">Software Development</option>
+            </select>
+         
+        {%csrf_token%}
+       <button type="submit" style="background-color: rgba(63, 7, 218, 0.815);" style="margin:0;" > SUBMIT </button>
+       
+      </form >  
+      <!-- <div id="loader"></div>
+       <div id="myDiv"></div> -->
+    </div>
+    
+
+  
+</div>
+
+</div>
+
+<!-- INCLUDE "t2228.php:PHP" -->
+ 
+
+<!-- <script>
+  var myVar;
+  
+  function myFunction() {
+    myVar = setTimeout(showPage, 2000);
+  }
+  
+  function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+  }
+  </script> -->
+    
+    </body></html>

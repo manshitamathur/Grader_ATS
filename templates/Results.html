@@ -1,0 +1,183 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'css/Res.css' %}" type="text/css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        
+    .unchecked {
+    color: #e6dfdfab;
+    font-size: 60px;
+    text-shadow: 1px 1px 0 #9c9c96;
+    }
+    .checked{
+        color: #5900ff ;
+    font-size: 60px;
+    text-shadow: 1px 1px 0 #5900ff;
+
+    }
+
+    .progress {
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.644);
+      height: 2rem;
+      width: 100%;
+      border-radius: 5px;
+      position: relative;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+      padding: 2px;
+    }
+    
+    .progress:hover .fill {
+      animation-play-state: running;
+    }
+    
+    .progress:hover .number {
+      transform: translateY(-40px);
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    .progress:nth-child(1) .fill {
+      background-color: #4c00ffde;
+      
+    }
+    
+    .progress:nth-child(2) .fill {
+      background-color: #4c00ffde;
+      
+    }
+    
+    .progress:nth-child(3) .fill {
+      background-color: #0000ff;
+      width: 95%;
+    }
+    
+    .progress .number {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 18px;
+      transition: 0.3s ease;
+      visibility: hidden;
+      opacity: 0;
+    }
+    
+    .progress .fill {
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0.5) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 75%, transparent 75%, transparent);
+      background-size: 40px;
+      border-radius: 5px;
+      animation: move 0.5s linear infinite paused;
+      height: 100%;
+    }
+    
+   
+    
+    </style>
+</head>
+<body>
+    <a class="fusion-logo-link" style="position: absolute;top:0px;left=10%;right=500px;top:5px; height:10rem;" href="https://thementor.live/">
+        <img src="https://thementor.live/wp-content/uploads/2021/03/The-Mentor.png" srcset="https://thementor.live/wp-content/uploads/2021/03/The-Mentor.png 1x, https://thementor.live/wp-content/uploads/2021/03/The-Mentor-Live-Retina-Logo.png 2x" width="222" height="83" style="max-height:83px;height:auto;" alt="The Mentor Logo" data-retina_logo_url="https://thementor.live/wp-content/uploads/2021/03/The-Mentor-Live-Retina-Logo.png" class="fusion-sticky-logo">
+  </a>
+    
+     <!-- <div class="rating-css">
+        <div>star rating system<br>using html & css</div>
+        
+      </div> -->
+     
+         <!-- <div class="container">
+          <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+        </div>
+        <progress id="file" value="32" max="100"> 32% </progress> 
+        </div> -->
+        <div class="w3-container" style="padding:10rem ;width:100rem;margin-top:5rem;">
+            
+            <div class="star-icon">
+         
+              {%for i in skills_list%}
+              <span class="fa fa-star checked"></span>
+              {%endfor%}
+                
+                {%for i in skills_list_left%}
+                <span class="fa fa-star unchecked"></span>
+              {%endfor%}
+                
+      
+              </div>
+              <br>
+              <br>
+              <div class="star-icon">
+                {%for i in projects_list%}
+                  <span class="fa fa-star checked"></span>
+                  {%endfor%}
+        
+                    {%for i in projects_list_left%}
+                    <span class="fa fa-star unchecked"></span>
+                  {%endfor%}
+                    
+         
+                <!-- <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star unchecked"></span> -->
+      
+              </div>
+              <br>
+              <br>
+              <!-- <div class="progress">
+                <div class="fill" style = "{{ ski }}"></div>
+                <div class="number">{{skills}}%</div>
+              </div> -->
+              <div class="w3-light-grey">
+                <div class="w3-container  w3-center" style="{{ski}};background-color:#5900ff;color:white;height:2rem;">40%</div>
+              </div><br>
+        <div class="w3-light-grey">
+            <div class="w3-container  w3-center" style="{{pro}};background-color:#5900ff;color:white;height:2rem;">20%</div>
+          </div><br>
+          
+          <!-- <div class="w3-light-grey">
+            <div class="w3-container  w3-center" style="width:60%;background-color:#5900ff;color:white;height:2rem;">60%</div>
+          </div><br>
+          
+          <div class="w3-light-grey">
+            <div class="w3-container w3-pure-violet w3-center" style="width:80%;background-color:#5900ff;color:white;height:2rem;">80%</div>
+          </div><br>
+          <div class="w3-light-grey">
+            <div class="w3-container w3-lightviolet w3-center" style="width:100%;background-color:#5900ff;color:white;height:2rem;">100%</div>
+          </div> -->
+          
+          </div> 
+        
+          
+</body>
+
+</html>
+
+
