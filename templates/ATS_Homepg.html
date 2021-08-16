@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Application Tracking System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<div class="container-fluid mh-100" style="height: 200px;">
+  <div class="row">
+    <div class="col-sm-6" style="background: linear-gradient(46.86deg, #5E17EA 31.72%, rgba(94, 23, 234, 0) 144.21%);">
+      <div class="logo" style="margin: 0;">
+        <img src="https://thementor.live/wp-content/uploads/2021/03/The-Mentor-Live-Retina-Logo.png" style="width: 236px; height: 80px;" alt="">
+      </div>
+      <img src="{% static 'images/Other 10.png' %}" style="height:36rem;width: 40rem;" alt="" class="email-img">
+      <div class="column1">
+        <div class="card-js">
+          <div class="card-js-counter-1 card-js-counter">
+            <div class="counter" >2700</div>
+            <div class="text" >Resumes Delivered</div>
+          </div>
+          <div class="card-js-counter-2 card-js-counter">
+            <div class="counter">550</div>
+            <div class="text">Linked in Profiles</div>
+          </div>
+          <div class="card-js-counter-3 card-js-counter">
+            <div class="counter">8000</div>
+            <div class="text">Job Links Distributed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6" style="background-color:white">
+      <div class="form-container">
+        <div class="page-header" style="border: none;">
+          <h1 style="color:#5E17EA; font-weight: 700; margin-bottom: 35px;">Application Tracing System</h1>
+          <h4 style="color: #5E17EA;">Upload Document</h4>
+          <form action="{% url 'ATS'%}" method="POST" enctype="multipart/form-data">
+            <input type="file" name="myresume"  placeholder="Select your resume(pdf format)" class="job-input" style="margin-bottom: 20px;">
+            <br>
+            <textarea name="job_description"  cols="50" rows="5" placeholder="Enter job description" style="border: 2px solid #5E17EA;"></textarea>
+
+            <div class="wrapper" style="margin-top: 30px;">
+              <div id="one">
+                {%csrf_token%}
+                  <button type="submit" class="job-submit">Submit</button>
+              </div>
+              <div id="two">
+                  <button type="button" onclick="location.href={% url 'home'%}" class="job-submit">Resume Grader</button>
+              </div>
+            </div>
+          
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+</body>
+</html>

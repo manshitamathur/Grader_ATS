@@ -74,29 +74,30 @@ WSGI_APPLICATION = 'resume.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
-     'default': {
-         'ENGINE': 'djongo',
-         'NAME': 'Resume_Grader',
-         'USER': 'thementor',
-        'PASSWORD': 'thementor',
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': str(BASE_DIR / 'db.sqlite3'),
+    }
+}
+# DATABASES = {
+#      'default': {
+#          'ENGINE': 'djongo',
+#          'NAME': 'Resume_Grader',
+#          'USER': 'thementor',
+#         'PASSWORD': 'thementor',
     #      'CLIENT': {
     #         'host': 'mongodb://ashish:ashish@cluster0-shard-00-00.x5mwj.mongodb.net:27017,cluster0-shard-00-01.x5mwj.mongodb.net:27017,cluster0-shard-00-02.x5mwj.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-r8x8o1-shard-0&authSource=admin&retryWrites=true&w=majority',
     #    }
-    'CLIENT': {
-            'host' :'mongodb://thementor:thementor@cluster0-shard-00-00.qh166.mongodb.net:27017,cluster0-shard-00-01.qh166.mongodb.net:27017,cluster0-shard-00-02.qh166.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-qac335-shard-0&authSource=admin&retryWrites=true&w=majority'
-               }
+    # 'CLIENT': {
+    #         'host' :'mongodb://thementor:thementor@cluster0-shard-00-00.qh166.mongodb.net:27017,cluster0-shard-00-01.qh166.mongodb.net:27017,cluster0-shard-00-02.qh166.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-qac335-shard-0&authSource=admin&retryWrites=true&w=majority'
+    #            }
 
-     }
+#      }
 
     
-}
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
